@@ -1,0 +1,295 @@
+/* Modernes & Elegantes Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    color: #f1f5f9;
+    min-height: 100vh;
+    padding: 30px 15px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Schneeflocken-Animation */
+.snowflake {
+    color: #fff;
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #00bfff;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    animation: snowflakes-fall 10s linear infinite, snowflakes-shake 3s ease-in-out infinite;
+}
+
+@keyframes snowflakes-fall {
+    0% { top: -10%; }
+    100% { top: 100%; }
+}
+
+@keyframes snowflakes-shake {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(80px); }
+}
+
+.snowflake:nth-of-type(1) { left: 10%; animation-delay: 0s, 0s; }
+.snowflake:nth-of-type(2) { left: 20%; animation-delay: 2s, 0.5s; }
+.snowflake:nth-of-type(3) { left: 30%; animation-delay: 4s, 1s; }
+.snowflake:nth-of-type(4) { left: 40%; animation-delay: 1s, 2s; }
+.snowflake:nth-of-type(5) { left: 50%; animation-delay: 3s, 1.5s; }
+.snowflake:nth-of-type(6) { left: 60%; animation-delay: 5s, 0.7s; }
+.snowflake:nth-of-type(7) { left: 70%; animation-delay: 2.5s, 1.2s; }
+.snowflake:nth-of-type(8) { left: 80%; animation-delay: 6s, 2s; }
+.snowflake:nth-of-type(9) { left: 90%; animation-delay: 1.5s, 1.8s; }
+.snowflake:nth-of-type(10) { left: 95%; animation-delay: 4.5s, 0.3s; }
+
+/* Header Design */
+.hero-header {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.hero-header h1 {
+    font-size: 2.5rem;
+    color: #7dd3fc;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(125, 211, 252, 0.4);
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(30, 41, 59, 0.75);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Profilbild Section */
+.profile-section {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.avatar-wrapper {
+    display: inline-block;
+    padding: 5px;
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    margin-bottom: 15px;
+}
+
+.profile-section img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-section h2 {
+    color: #f8fafc;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.profile-section p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+/* Formular Layout */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #bae6fd;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+select option {
+    background-color: #1e293b;
+    color: #fff;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0284c7, #38bdf8);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    margin: 40px 0;
+}
+
+/* Adminbereich */
+.admin-login-section {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid #334155;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.admin-login-section h3 {
+    color: #f8fafc;
+    margin-bottom: 5px;
+}
+
+.admin-subtitle {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.admin-form-grid {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-admin {
+    background: #334155;
+    color: #f8fafc;
+}
+
+.btn-admin:hover {
+    background: #475569;
+}
+
+/* Admin Dashboard Table */
+.admin-dashboard {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #334155;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.badge {
+    background: #ef4444;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    background-color: #0284c7;
+    color: white;
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(56, 189, 248, 0.05);
+}
+
+@media (max-width: 600px) {
+    .form-row, .admin-form-grid {
+        flex-direction: column;
+    }
+}

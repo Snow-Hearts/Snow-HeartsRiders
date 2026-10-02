@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow HeartsRiders - Club Registrierung</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Schneeflocken Container -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <header class="hero-header">
+        <div class="header-content">
+            <h1>Snow HeartsRiders</h1>
+            <p class="subtitle">Official Star Stable Club Portal</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Profilbild & Headings -->
+        <section class="profile-section">
+            <div class="avatar-wrapper">
+                <img src="profile.jpg" alt="Snow HeartsRiders Profilbild" id="avatar">
+            </div>
+            <h2>Werde Teil unseres Clubs!</h2>
+            <p>Fülle das Formular aus, um dich bei den Snow HeartsRiders zu bewerben.</p>
+        </section>
+
+        <!-- Registrierungsformular -->
+        <!-- Hinweis: Trage bei action deinen Formspree-Link ein, um E-Mails an evaschafer748@gmail.com und schaefeemalin48@gmail.com zu erhalten -->
+        <form id="registrationForm" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST" class="styled-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="vorname">Vorname (Echter Name)*</label>
+                    <input type="text" id="vorname" name="Vorname" required placeholder="z. B. Anna">
+                </div>
+
+                <div class="form-group">
+                    <label for="nachname">Nachname (Echter Name)*</label>
+                    <input type="text" id="nachname" name="Nachname" required placeholder="z. B. Müller">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="spielername">Spielername (SSO)*</label>
+                    <input type="text" id="spielername" name="Spielername" required placeholder="z. B. Chloe Silverstorm">
+                </div>
+
+                <div class="form-group">
+                    <label for="spitzname">Spitzname</label>
+                    <input type="text" id="spitzname" name="Spitzname" placeholder="z. B. Chlo">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="level">Level*</label>
+                    <input type="number" id="level" name="Level" min="1" max="30" required placeholder="z. B. 20">
+                </div>
+
+                <div class="form-group">
+                    <label for="starrider">StarRider Status*</label>
+                    <select id="starrider" name="StarRider" required>
+                        <option value="" disabled selected>Bitte wählen...</option>
+                        <option value="Ja">Ja</option>
+                        <option value="Nein">Nein</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="alter">Alter*</label>
+                    <input type="number" id="alter" name="Alter" min="6" max="99" required placeholder="z. B. 15">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-Mail-Adresse*</label>
+                    <input type="email" id="email" name="Email" required placeholder="deine@email.de">
+                </div>
+
+                <div class="form-group">
+                    <label for="discord">Discord-Name*</label>
+                    <input type="text" id="discord" name="DiscordName" required placeholder="username oder Name#1234">
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="anmerkungen">Weitere Informationen / Anmerkungen (Optional)</label>
+                <textarea id="anmerkungen" name="Anmerkungen" rows="4" placeholder="Teile uns hier deine Wünsche, Erfahrungen oder Fragen mit..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Absenden & Bewerben</button>
+        </form>
+
+        <div class="divider"></div>
+
+        <!-- Admin Login Bereich -->
+        <section class="admin-login-section">
+            <h3>Admin-Login (Club-Leitung)</h3>
+            <p class="admin-subtitle">Nur für evaschafer748@gmail.com & schaefeemalin48@gmail.com</p>
+            <div class="admin-form-grid">
+                <div class="form-group">
+                    <label for="adminEmail">Admin E-Mail</label>
+                    <input type="email" id="adminEmail" placeholder="Deine Admin E-Mail">
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Passwort</label>
+                    <input type="password" id="adminPassword" placeholder="Passwort eingeben">
+                </div>
+            </div>
+            <button onclick="loginAdmin()" class="btn btn-admin">Einloggen</button>
+        </section>
+
+        <!-- Admin Dashboard (Anzeige nach Login) -->
+        <section id="adminDashboard" class="admin-dashboard" style="display: none;">
+            <div class="dashboard-header">
+                <h3>Registrierte Mitglieder</h3>
+                <span class="badge">Vertraulich</span>
+            </div>
+            <div class="table-responsive">
+                <table id="membersTable">
+                    <thead>
+                        <tr>
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>Spielername</th>
+                            <th>Spitzname</th>
+                            <th>Level</th>
+                            <th>StarRider</th>
+                            <th>Alter</th>
+                            <th>E-Mail</th>
+                            <th>Discord</th>
+                            <th>Anmerkungen</th>
+                        </tr>
+                    </thead>
+                    <tbody id="membersTableBody">
+                        <!-- Einträge werden per JS geladen -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
